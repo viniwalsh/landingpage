@@ -1,0 +1,11 @@
+<div class="header">
+  <h2>Fluxo Atual: {{ currentFlow }}</h2>
+</div>
+<div *ngFor="let moduleId of modulesOrder" class="container" [ngClass]="segmentColorClass">
+  <ng-container [ngSwitch]="moduleId">
+    <app-bem-vindo *ngSwitchCase="1" [flow]="currentFlow" [segment]="currentSegment"></app-bem-vindo>
+    <app-produto *ngSwitchCase="2" [flow]="currentFlow" [segment]="currentSegment"></app-produto>
+    <app-cartao *ngSwitchCase="3" [flow]="currentFlow" [segment]="currentSegment"></app-cartao>
+    <app-conta *ngSwitchCase="4" [flow]="currentFlow" [segment]="currentSegment"></app-conta>
+  </ng-container>
+</div>
